@@ -44,6 +44,7 @@
 
           if (Math.random() > 0.5) {
             score += 1;
+
             setTimeout(() => {
               this.scoreSound.play();
             }, 100);
@@ -69,20 +70,19 @@
           return (
             <div className="Team">
               <h2>{this.props.name}</h2>
-
               <div className="identity">
                 <img src={this.props.logo} alt={this.props.name} />
               </div>
               <div>
                 <strong>Shots:</strong> {this.state.shots}
               </div>
-
               <div>
                 <strong>Score:</strong> {this.state.score}
               </div>
-              {shotPercentageDiv}
 
+              {shotPercentageDiv}
               <button onClick={this.shotHandler}>Shoot!</button>
+              <button onClick={this.reset}>Reset</button>
             </div>
           );
         }
